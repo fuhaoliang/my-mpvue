@@ -1,0 +1,7 @@
+<template name="0fa5fa07">
+  <view class="_div data-v-456aa4e6">
+    <van-popup show="true" class="_van-popup data-v-456aa4e6">
+      <van-loading color="#fff" size="150rpx" custom-class="loading-box" type="spinner" class="_van-loading data-v-456aa4e6"></van-loading>
+    </van-popup>
+  </view>
+</template>

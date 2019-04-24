@@ -1,0 +1,19 @@
+<template name="239d21ac">
+  <view class="_div data-v-71fcf84b">
+    <view class="_p data-v-71fcf84b card">
+      {{text}}
+    </view>
+    <view class="_p data-v-71fcf84b card">
+      {{text}}
+    </view>
+    <view class="_p data-v-71fcf84b card">
+      {{text}}
+    </view>
+    <view class="_p data-v-71fcf84b card">
+      {{text}}
+    </view>
+    <view class="_p data-v-71fcf84b card">
+      {{text}}
+    </view>
+  </view>
+</template>

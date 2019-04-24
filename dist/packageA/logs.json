@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-tag": "/vant-weapp/dist/tag/index",
+    "van-slider": "/vant-weapp/dist/slider/index",
+    "van-popup": "/vant-weapp/dist/popup/index",
+    "van-loading": "/vant-weapp/dist/loading/index"
+  },
+  "navigationBarTitleText": "查看启动日志"
+}

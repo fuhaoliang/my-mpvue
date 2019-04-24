@@ -1,0 +1,7 @@
+<import src="/components/card.vue.wxml" /><template name="3cb4c4b4">
+  <view class="_div data-v-1407b713 counter-warp"><template data="{{...$root[$kk+'0'], $root}}" is="239d21ac"></template>
+    <view class="_p data-v-1407b713">Vuex counter：{{ count }}</view>
+    <view class="_p data-v-1407b713"><button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-1407b713">+</button> <button bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_button data-v-1407b713">-</button></view>
+    <navigator url="/pages/index" class="_a data-v-1407b713 home">去往首页</navigator>
+  </view>
+</template>
