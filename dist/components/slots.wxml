@@ -1,1 +1,3 @@
+<import src="/components/mpvueGestureLock/index.vue.wxml" />
+<import src="/components/card.vue.wxml" />
 <import src="/components/card.vue.wxml" />

@@ -49,7 +49,16 @@ for (const i in services) {
     Http[i][ind] = async function (params, options = {}, headers = {}, isNeedStatus = false) {
       let apiUrl = api.url
       const newParams = {}
-      options = Object.assign({ loading: false, show: false, error: true, mock: false, proxy: false }, options)
+      options = Object.assign({
+        title: '加载中',
+        mask: false,
+        loading: false,
+        show: true,
+        error: true,
+        mock: false,
+        proxy: false
+      },
+      options)
       if (params) {
         utils.each(params, function (ind, param) {
           if (apiUrl.indexOf('{' + ind + '}') > -1) {
@@ -73,10 +82,11 @@ for (const i in services) {
         config.headers = headers
       }
       if (options.loading) {
-        store.state.loading = true
+        store.commit('set_loading', true)
       }
       if (options.show) {
-        store.state.loadingShow = true
+        wx.showLoading({ title: options.title, mask: options.mask })
+        store.commit('set_loadingShow', true)
       }
       const host = ((api.mock || options.mock) && process.env.NODE_ENV === 'development') || options.proxy ? '' : serviceHost
       console.info('host----->', host)
@@ -119,10 +129,11 @@ for (const i in services) {
         response = response.data
       }
       if (options.loading) {
-        store.state.loading = false
+        store.commit('set_loading', false)
       }
       if (options.show) {
-        store.state.loadingShow = false
+        wx.hideLoading({ title: options.title, mask: options.mask })
+        store.commit('set_loadingShow', false)
       }
       console.info('response', response)
       return response

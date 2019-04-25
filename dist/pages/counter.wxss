@@ -11,3 +11,39 @@
   color: blue;
   border: 2rpx solid blue;
 }
+.gesture-lock.data-v-1ad8ba62 {
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.gesture-lock .cycle.data-v-1ad8ba62 {
+  box-sizing: border-box;
+  position: absolute;
+  border: 4rpx solid #66aaff;
+  border-radius: 50%;
+}
+.gesture-lock .cycle.check.data-v-1ad8ba62:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  border: 4rpx solid #66aaff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #66aaff;
+}
+.gesture-lock .line.data-v-1ad8ba62 {
+  height: 0;
+  border-top: 4rpx solid #66aaff;
+  position: absolute;
+  transform-origin: left center;
+}
+.gesture-lock.error .cycle.check.data-v-1ad8ba62,
+.gesture-lock.error .cycle.check.data-v-1ad8ba62:after,
+.gesture-lock.error .line.data-v-1ad8ba62 {
+  border-color: #ffa197;
+}

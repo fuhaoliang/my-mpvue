@@ -1,5 +1,9 @@
 <template>
   <div class="counter-warp">
+      <a href="/pages/home" class="counter">去往home示例页面</a>
+      <mpvue-gesture-lock :containerWidth="600" :cycleRadius="70" @end="onEnd" :password="password"></mpvue-gesture-lock>
+     <div class="result">{{data}}</div>
+    <div class="result">正确密码是：12369</div>
     <card :text="'ffffff'"></card>
     <p>Vuex counter：{{ count }}</p>
     <p>
@@ -13,14 +17,23 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import mpvueGestureLock from '@/components/mpvueGestureLock/index'
 import card from '@/components/card'
 
 export default {
   config: {
-    navigationBarTitleText: 'Vuex示例'
+    navigationBarTitleText: 'Vuex示例',
+    disableScroll: true
+  },
+  data () {
+    return {
+      data: [],
+      password: [1, 2, 3, 6, 9]
+    }
   },
   components: {
-    card
+    card,
+    mpvueGestureLock
   },
   computed: {
     ...mapState([
@@ -35,7 +48,10 @@ export default {
     ...mapMutations([
       'increment',
       'decrement'
-    ])
+    ]),
+    onEnd (data) {
+      this.data = data
+    }
   }
 }
 </script>

@@ -15,7 +15,7 @@
 />
     </div>
     <van-tag>标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">{{ loading }}</van-tag>
     <van-tag type="primary">标签</van-tag>
     <van-tag type="success">标签</van-tag>
     <div class="usermotto">
@@ -30,7 +30,7 @@
     </form>
     <a href="/pages/counter" class="counter">去往Vuex示例页面</a>
     <div @click="goTo()">去counter</div>
-    <!-- <common/> -->
+    <div @click="handlerClick()">showToast</div>
   </div>
 </template>
 
@@ -38,32 +38,41 @@
 
 <script>
 import card from '@/components/card'
-import common from '@/components/common'
-// const moment = require('http://momentjs.cn/downloads/moment.min.js')
-// console.info('monment', moment)
 import Http from '@/utils/http'
+import { mapState } from 'vuex'
+// import { showToast } from '@/utils/toast'
 export default {
-  mpType: 'page',
-
   data () {
     return {
       motto: 'Hello World',
       userInfo: {}
     }
   },
-
+  computed: {
+    ...mapState(['loading'])
+  },
   components: {
-    card,
-    common
+    card
   },
   mounted () {
     this.request()
-    wx.showLoading({
-      title: '加载中',
-      mask: true
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      success (res) {
+        console.log(res.tapIndex)
+      },
+      fail (res) {
+        console.log(res.errMsg)
+      }
     })
   },
   methods: {
+    handlerClick () {
+      // showToast()
+      wx.showLoading({
+        title: '加载中'
+      })
+    },
     bindViewTap () {
       const url = '/packageA/logs'
       this.$router.push(url)
@@ -96,6 +105,7 @@ export default {
     async request () {
       const a = await Http.mobileApi.getMaintenanceInfo()
       console.info('a', a)
+      console.info('loading', this.loading)
     }
   },
 

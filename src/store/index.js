@@ -8,10 +8,16 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     count: 0,
-    loadding: false,
+    loading: false,
     loadingShow: false
   },
   mutations: {
+    set_loading: (state, bool) => {
+      state.loading = bool
+    },
+    set_loadingShow: (state, bool) => {
+      state.loadingShow = bool
+    },
     increment: (state) => {
       const obj = state
       obj.count += 1

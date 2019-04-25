@@ -2,10 +2,12 @@ import Vue from 'vue'
 import MpvueRouterPatch from 'mpvue-router-patch'
 import App from '@/App'
 import store from '@/store'
-const Fly = require('flyio/dist/npm/wx')
+import HandleDataPlugin from './mixins/handleData'
+
 Vue.use(MpvueRouterPatch)
+Vue.use(HandleDataPlugin)
+
 Vue.config.productionTip = false
-Vue.prototype.$fly = new Fly()
 const app = new Vue({
   mpType: 'app',
   store,

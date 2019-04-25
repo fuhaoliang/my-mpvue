@@ -27,12 +27,3 @@
   color: #2e92de;
   border: 2rpx solid blue;
 }
-.van-popup {
-  border-radius: 6rpx;
-  background-color: rgba(0, 0, 0, 0);
-  overflow: hidden;
-}
-.loading-box {
-  border-radius: 6rpx;
-  background-color: rgba(0, 0, 0, 0.5);
-}

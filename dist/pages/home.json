@@ -4,7 +4,5 @@
     "van-slider": "/vant-weapp/dist/slider/index",
     "van-popup": "/vant-weapp/dist/popup/index",
     "van-loading": "/vant-weapp/dist/loading/index"
-  },
-  "navigationBarTitleText": "Vuex示例",
-  "disableScroll": true
+  }
 }
